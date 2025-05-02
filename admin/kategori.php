@@ -200,19 +200,24 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <div  class="section">
-      <div class="row">
-        <div class="col-lg-6">
-                 
-          <div class="card">
-            
-          </div>
-
-        </div>
-
+    <div  class="row">
         <div class="col-lg-12">
-
+          <div class="card">
+            <div class="card-body">
+                <a href="t_kategori.php" class="btn btn-primary mt-3">
+                    <i class="bi bi-plus-lg"></i> tambah data 
+                </a>
+            </div>
+          </div>
+        </div>
+    </div>
           
+    <section class="section">
+        <div class="row">        
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+
             <!-- Table with stripped rows -->
               <table class="table table-striped mt-2">
                 <thead>
