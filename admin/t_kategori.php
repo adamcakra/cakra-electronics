@@ -11,7 +11,7 @@ if (isset($_POST['simpan'])) {
     $id_kategori = $huruf . sprintf("%03s", $urutan);
     $nm_kategori = $_POST['nm_kategori'];
 
-    $query = mysqli_query($koneksi, "INSERT INTO tb_kategori(id_kategori,nm_kategori) VALUES ('$id_kategori', '$nm_kategori')");
+    $query = mysqli_query($koneksi, "INSERT INTO tb_kategori(id_kategori,nm_kategori) VALUES ('$id_kategori', '$nm_kategori')"); 
     if ($query) {
         echo "<script>alert('data berhasil ditambahkan!')</script>";
         header("refresh:0, kategori.php");
