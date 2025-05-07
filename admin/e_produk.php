@@ -138,60 +138,62 @@ if (isset($_POST['update'])) {
     </header><!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
 
-        <ul class="sidebar-nav" id="sidebar-nav">
+<ul class="sidebar-nav" id="sidebar-nav">
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php">
-                    <i class="bi bi-house-door"></i>
-                    <span>Beranda</span>
-                </a>
-            </li><!-- End Beranda Nav -->
+  <li class="nav-item">
+    <a class="nav-link " href="index.php">
+      <i class="bi bi-grid"></i>
+      <span>Beranda</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="kategori.php">
-                    <i class="bi bi-tags"></i>
-                    <span>Kategori Produk</span>
-                </a>
-            </li><!-- End Kategori Produk Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="kategori.php">
+    <i class="bi bi-app-indicator"></i>
+      <span>Kategori produk</span>
+    </a>
+  </li><!-- End kategori Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="produk.php">
-                    <i class="bi bi-shop"></i>
-                    <span>Produk</span>
-                </a>
-            </li><!-- End Produk Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="produk.php">
+    <i class="bi bi-bag-fill"></i>
+      <span>Produk</span>
+    </a>
+  </li><!-- End produk Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="keranjang.php">
-                    <i class="bi bi-cart"></i>
-                    <span>Keranjang</span>
-                </a>
-            </li><!-- End Keranjang Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="keranjang.php">
+    <i class="bi bi-cart-check"></i>
+      <span>Keranjang</span>
+    </a>
+  </li><!-- End keranjang Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="transaksi.php">
-                    <i class="bi bi-receipt"></i>
-                    <span>Transaksi</span>
-                </a>
-            </li><!-- End Transaksi Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="transaksi.php">
+    <i class="bi bi-cash"></i>
+      <span>Transaksi</span>
+    </a>
+  </li><!-- End transaksi Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="laporan.php">
-                    <i class="bi bi-file-earmark-bar-graph"></i>
-                    <span>Laporan</span>
-                </a>
-            </li><!-- End Laporan Page Nav -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pengguna.php">
-                    <i class="bi bi-people"></i>
-                    <span>Pengguna</span>
-                </a>
-            </li><!-- End Pengguna Page Nav -->
-        </ul>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="laporan.php">
+    <i class="bi bi-envelope"></i>
+      <span>Laporan</span>
+    </a>
+  </li><!-- End Laporan Page Nav -->
 
-    </aside><!-- End Sidebar-->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pengguna.php">
+    <i class="bi bi-person-add"></i>
+      <span>Pengguna</span>
+    </a>
+  </li><!-- End pengguna Page Nav -->
+
+</ul>
+
+</aside><!-- End Sidebar-->
 
     <main id="main" class="main">
 
@@ -218,7 +220,7 @@ if (isset($_POST['update'])) {
                                 <div class="col-12">
                                     <label for="nm_produk" class="form-label">Nama Produk</label>
                                     <input type="text" class="form-control" id="nm_produk" name="nm_produk" 
-                                    placeholder="Masukkan Nama Produk"  value="<?php echo $data ['nm_produk']; ?>"
+                                    placeholder="Masukkan Nama Produk" value="<?php echo $data ['nm_produk']; ?>"
                                     required>
                                 </div>
                                 <div class="col-12">
