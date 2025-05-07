@@ -209,7 +209,7 @@
                                     }
 
                                     // Tambahkan ORDER BY 
-                                    $sql_query .= "ORDER BY tb_produk.id_produk ASC";
+                                    $sql_query .= " ORDER BY tb_produk.id_produk ASC";
 
                                     $sql = mysqli_query($koneksi, $sql_query);
 
