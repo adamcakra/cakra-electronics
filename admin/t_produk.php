@@ -264,7 +264,7 @@ if (isset($_POST['simpan'])) {
             &copy; Copyright <strong><span>cakraelektronik</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://instagram.com/cakraprama/">adam cakra</a>
+            Designed by <a href="https://instagram.com/cakraprama/">adamcakra</a>
         </div>
     </footer><!-- End Footer -->
 

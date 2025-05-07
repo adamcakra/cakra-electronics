@@ -266,10 +266,10 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>Nama Website</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>cakraelektronik</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://instagram.com/namaig/">Nama Anda</a>
+            Designed by <a href="https://instagram.com/cakraprama/">adamcakra</a>
         </div>
     </footer><!-- End Footer -->
 
