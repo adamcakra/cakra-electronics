@@ -47,7 +47,7 @@
             <form class="search-form d-flex align-items-center" method="POST" action="">
                 <input type="text" name="query" placeholder="Search" title="Enter search
                 keyword" value="<?php echo isset($_post['query']) ? htmlspecialchars($_POST
-                ['query']) : '' : ?>">
+                ['query']) : '' ; ?>">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
             </form>
         </div><!-- End Search Bar -->
@@ -202,7 +202,7 @@
                                     ['query']) : '';
 
                                     // Query dasar
-                                    $sql_query = "SELECT id_user, username, sts FROM tb_user";
+                                    $sql_query = "SELECT id_user, username, status FROM tb_user";
 
                                     // Tambahkan pencarian jika input tidak kosong
                                     if (!empty($query)) {
@@ -216,8 +216,8 @@
                                     ?>
                                             <tr>
                                                  <td><?php echo $no++; ?></td>
-                                                 td><?php echo $hasil['username']; ?></td>
-                                                 <td><?php echo $hasil['sts']; ?></td>
+                                                 <td><?php echo $hasil['username']; ?></td>
+                                                 <td><?php echo $hasil['status']; ?></td>
                                                  <td>
                                                     <a href="h_pengguna.php?id=<?php echo $hasil['id_user']; ?>" 
                                                     class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')">
