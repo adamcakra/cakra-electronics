@@ -221,8 +221,7 @@ if (isset($_POST['simpan'])) {
                                 </div>
                                 <div class="col-12">
                                     <label for="desk" class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" id="desk" name="desk" placeholder="Masukkan 
-                                    Deskripsi Produk" required></textarea>
+                                    <textarea class="form-control" id="desk" name="desk" placeholder="Masukkan Deskripsi Produk" required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <label for="id_kategori" class="form-label">Kategori</label>
@@ -230,13 +229,18 @@ if (isset($_POST['simpan'])) {
                                         <option value="">-- Pilih Kategori --</option>
                                         <?php
                                         include "koneksi.php";
-                                        $query = mysqli_query($koneksi, "SELECT * FROM tb_ktg");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM tb_kategori");
                                         while ($kategori = mysqli_fetch_array($query)) {
-                                            echo "<option value='{$kategori['id_ktg']}'>{$kategori['nm_ktg']}</
+                                            echo "<option value='{$kategori['id_kategori']}'>{$kategori['nm_kategori']}</
                                             option>";
                                         }
                                         ?>
                                     </select>
+                                </div>
+                                <div class="text-center">
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
+                                </div>
                             </form>
 
                         </div>
