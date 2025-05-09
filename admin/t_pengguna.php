@@ -1,3 +1,37 @@
+<?php
+include "koneksi.php";
+
+if (isset($_POST['simpan'])) {
+    // Ambil ID terakhir dari tb_user
+    $auto = mysqli_query($koneksi, "SELECT MAX(id_user) AS max_code FROM tb_user");
+    $hasil = mysqli_fetch_array($auto);
+    $code = $hasil['max_code'];
+
+    // Menghasilkan ID baru dengan format U001, U002, dst.
+    $urutan = (int) substr($code, 1, 3);
+    $urutan++;
+    $huruf = "U";
+    $id_user = $huruf . sprintf("%03s", $urutan);
+
+    // Ambil input dari form
+    $username = $_POST['username'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash password
+    $status = $_POST['status'];
+
+    // Query untuk insert data ke tb_user
+    $query = mysqli_query($koneksi, "INSERT INTO tb_user (id_user, username, pass, sts) VALUES ('$id_user', '$username', '$password', '$status')");
+
+    // Notifikasi
+    if ($query) {
+        echo "<script>alert('Data pengguna berhasil ditambahkan!');</script>";
+        header("refresh:0, pengguna.php");
+    } else {
+        echo "<script>alert('Data pengguna gagal ditambahkan!');</script>";
+        header("refresh:0, pengguna.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
