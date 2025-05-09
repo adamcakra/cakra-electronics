@@ -24,8 +24,6 @@ if (isset($_POST['simpan'])) {
 
     $dir = "produk_img/"; // Direktori penyimpanan gambar
     $allowed_extensions = array("jpg", "jpeg", "png", "webp");
-    $dir = "produk_img/"; // Direktori penyimpanan gambar
-    $allowed_extensions = array("jpg", "jpeg", "png", "webp");
 
     if (!in_array($extension, $allowed_extensions)) {
     echo "<script>alert('Format tidak valid. Hanya jpg, jpeg, png, dan webp yang diperbolehkan.');</script>";
@@ -223,7 +221,8 @@ if (isset($_POST['simpan'])) {
                                 </div>
                                 <div class="col-12">
                                     <label for="desk" class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" id="desk" name="desk" placeholder="Masukkan Deskripsi Produk" required></textarea>
+                                    <textarea class="form-control" id="desk" name="desk" placeholder="Masukkan 
+                                    Deskripsi Produk" required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <label for="id_kategori" class="form-label">Kategori</label>
@@ -238,15 +237,6 @@ if (isset($_POST['simpan'])) {
                                         }
                                         ?>
                                     </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="gambar" class="form-label">Gambar Produk</label>
-                                    <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">
-                                </div>
-                                <div class="text-center">
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
-                                    <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
-                                </div>
                             </form>
 
                         </div>
