@@ -93,61 +93,88 @@
 
     </header><!-- End Header -->
 
-    <aside id="sidebar" class="sidebar">
+    <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-        <ul class="sidebar-nav" id="sidebar-nav">
+<ul class="sidebar-nav" id="sidebar-nav">
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php">
-                    <i class="bi bi-grid"></i>
-                    <span>Beranda</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="kategori.php">
-                    <i class="bi bi-airplane"></i>
-                    <span>Kategori</span>
-                </a>
-            </li><!-- End Kategori Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link " href="index.php">
+      <i class="bi bi-grid"></i>
+      <span>Beranda</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="produk.php">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Produk</span>
-                </a>
-            </li><!-- End Produk Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="kategori.php">
+    <i class="bi bi-app-indicator"></i>
+      <span>Kategori produk</span>
+    </a>
+  </li><!-- End kategori Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="keranjang.php">
-                    <i class="bi bi-envelope"></i>
-                    <span>Keranjang</span>
-                </a>
-            </li><!-- End Keranjang Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="produk.php">
+    <i class="bi bi-bag-fill"></i>
+      <span>Produk</span>
+    </a>
+  </li><!-- End produk Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="transaksi.php">
-                    <i class="bi bi-card-list"></i>
-                    <span>Transaksi</span>
-                </a>
-            </li><!-- End Transaksi Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="keranjang.php">
+    <i class="bi bi-cart-check"></i>
+      <span>Keranjang</span>
+    </a>
+  </li><!-- End keranjang Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="laporan.php">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Laporan</span>
-                </a>
-            </li><!-- End Laporan Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="transaksi.php">
+    <i class="bi bi-cash"></i>
+      <span>Transaksi</span>
+    </a>
+  </li><!-- End transaksi Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pengguna.php">
-                    <i class="bi bi-dash-circle"></i>
-                    <span>Pengguna</span>
-                </a>
-            </li><!-- End pengguna Page Nav -->
-        </ul>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="laporan.php">
+    <i class="bi bi-envelope"></i>
+      <span>Laporan</span>
+    </a>
+  </li><!-- End Laporan Page Nav -->
 
-    </aside><!-- End Sidebar-->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pengguna.php">
+    <i class="bi bi-person-add"></i>
+      <span>Pengguna</span>
+    </a>
+  </li><!-- End pengguna Page Nav -->
 
+</ul>
+
+</aside><!-- End Sidebar-->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="transaksi.php">
+    <i class="bi bi-cash"></i>
+      <span>Transaksi</span>
+    </a>
+  </li><!-- End transaksi Page Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="laporan.php">
+    <i class="bi bi-envelope"></i>
+      <span>Laporan</span>
+    </a>
+  </li><!-- End Laporan Page Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pengguna.php">
+    <i class="bi bi-person-add"></i>
+      <span>Pengguna</span>
+    </a>
+  </li><!-- End pengguna Page Nav -->
+
+</ul>
+
+</aside><!-- End Sidebar-->
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -189,8 +216,8 @@
                                         <th scope="col">Harga</th>
                                         <th scope="col">Stok</th>
                                         <th scope="col">Nama Kategori</th>
-                                        <th scope="col">Gambar</th>
-                                        <th scope="col">Aksi</th>
+                                        <th scope="col">aksi</th>
+                                        <th scope="col">gambar</th>
                                     </tr>
                                 </thead>
                                 <tbody>

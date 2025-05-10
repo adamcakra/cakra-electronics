@@ -33,7 +33,7 @@ if (isset($_POST['simpan'])) {
         move_uploaded_file($tmp_file, $dir . $imgnewfile);
 
         // Simpan data ke database
-        $query = mysqli_query($koneksi, "INSERT INTO tb_produk (id_produk, nm_produk, harga, stok, ket, id_ktg, gambar) VALUES ('$id_produk', '$nm_produk', '$harga', '$stok', '$desk', '$id_kategori', '$imgnewfile')");
+        $query = mysqli_query($koneksi, "INSERT INTO tb_produk (id_produk, nm_produk, harga, stok, desk, id_kategori, gambar) VALUES ('$id_produk', '$nm_produk', '$harga', '$stok', '$desk', '$id_kategori', '$imgnewfile')");
 
         if ($query) {
            echo "<script>alert('Produk berhasil ditambahkan!')</script>";
@@ -53,7 +53,7 @@ if (isset($_POST['simpan'])) {
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Produk - cakraelektronik</title>
+    <title>Produk - cakraelektronik Admin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -93,28 +93,19 @@ if (isset($_POST['simpan'])) {
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="assets/img/elang.jpeg" alt="Profile" class="rounded-circle">
-                        <!-- profile-img.jpg diganti nama file gambar kalian -->
+                        <img src="assets/img/elang.jpeg"alt="Profile" class="rounded-circle">
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Pramudya</h6>
+                            <h6><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'adam'; ?></h6>
                             <span>Admin</span>
                         </li>
                         <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <a class="dropdown-item d-flex align-items-center" href="logout.php">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
@@ -134,18 +125,18 @@ if (isset($_POST['simpan'])) {
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link-collapsed " href="index.php">
-      <i class="bi bi-house-door"></i>
+    <a class="nav-link " href="index.php">
+      <i class="bi bi-grid"></i>
       <span>Beranda</span>
     </a>
-  </li><!-- End Beranda Nav -->
+  </li><!-- End Dashboard Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="kategori.php">
-    <i class="bi bi-tags"></i>
+    <a class="nav-link collapsed" href="kategori.php">
+    <i class="bi bi-app-indicator"></i>
       <span>Kategori produk</span>
     </a>
-  </li><!-- End kategori Produk Page Nav -->
+  </li><!-- End kategori Page Nav -->
 
   <li class="nav-item">
     <a class="nav-link collapsed" href="produk.php">
@@ -185,7 +176,6 @@ if (isset($_POST['simpan'])) {
 </ul>
 
 </aside><!-- End Sidebar-->
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -198,14 +188,12 @@ if (isset($_POST['simpan'])) {
                 </ol>
             </nav>
         </div><!-- End Page Title -->
+
         <section class="section">
             <div class="row">
                 <div class="col-lg-6">
-
                     <div class="card">
                         <div class="card-body">
-
-                            <!-- Vertical Form -->
                             <form class="row g-3 mt-2" method="post" enctype="multipart/form-data">
                                 <div class="col-12">
                                     <label for="nm_produk" class="form-label">Nama Produk</label>
@@ -231,21 +219,22 @@ if (isset($_POST['simpan'])) {
                                         include "koneksi.php";
                                         $query = mysqli_query($koneksi, "SELECT * FROM tb_kategori");
                                         while ($kategori = mysqli_fetch_array($query)) {
-                                            echo "<option value='{$kategori['id_kategori']}'>{$kategori['nm_kategori']}</
-                                            option>";
+                                            echo "<option value='{$kategori['id_kategori']}'>{$kategori['nm_kategori']}</option>";
                                         }
                                         ?>
                                     </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="gambar" class="form-label">Gambar Produk</label>
+                                    <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">
                                 </div>
                                 <div class="text-center">
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                     <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -258,7 +247,7 @@ if (isset($_POST['simpan'])) {
             &copy; Copyright <strong><span>cakraelektronik</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://instagram.com/cakraprama/">adamcakra</a>
+            Designed by <a href="https://instagram.com/cakraprama/" target="_blank">adamcakra</a>
         </div>
     </footer><!-- End Footer -->
 

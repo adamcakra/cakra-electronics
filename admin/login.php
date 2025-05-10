@@ -94,14 +94,14 @@ if (isset($_POST["login"])) {
                   <form class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                      <label for="adamcakra" class="form-label">username</label>
+                        <input type="text" name="adamcakra" class="form-control" id="adamcakra" required>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <label for="1234" class="form-label">pasword</label>
+                      <input type="1234" name="1234" class="form-control" id="1234" required>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit" name="login">Login</button>
