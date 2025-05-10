@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Produk - cakraelektronik</title>
+    <title>Pengguna- cakraelektronik Admin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -28,6 +28,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -36,7 +37,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.php" class="logo d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">cakraelektronik</span>
             </a>
@@ -45,12 +46,11 @@
 
         <div class="search-bar">
             <form class="search-form d-flex align-items-center" method="POST" action="">
-                <input type="text" name="query" placeholder="Search" title="Enter search
-                keyword" value="<?php echo isset($_post['query']) ? htmlspecialchars($_POST
-                ['query']) : '' ; ?>">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword" value="<?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?>">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
             </form>
         </div><!-- End Search Bar -->
+
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
@@ -65,23 +65,19 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="assets/img/elang.jpeg" alt="Profile" class="rounded-circle">
-                        <!-- profile-img.jpg diganti dengan foto kalian -->
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>pramudya</h6>
+                            <h6><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'pramudya'; ?></h6>
                             <span>Admin</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <a class="dropdown-item d-flex align-items-center" href="logout.php">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
@@ -95,60 +91,63 @@
 
     </header><!-- End Header -->
 
-    <aside id="sidebar" class="sidebar">
+    <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-        <ul class="sidebar-nav" id="sidebar-nav">
+<ul class="sidebar-nav" id="sidebar-nav">
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php">
-                    <i class="bi bi-grid"></i>
-                    <span>Beranda</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="kategori.php">
-                    <i class="bi bi-airplane"></i>
-                    <span>Kategori</span>
-                </a>
-            </li><!-- End Kategori Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link " href="index.php">
+      <i class="bi bi-grid"></i>
+      <span>Beranda</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="produk.php">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Produk</span>
-                </a>
-            </li><!-- End Produk Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="kategori.php">
+    <i class="bi bi-app-indicator"></i>
+      <span>Kategori produk</span>
+    </a>
+  </li><!-- End kategori Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="keranjang.php">
-                    <i class="bi bi-envelope"></i>
-                    <span>Keranjang</span>
-                </a>
-            </li><!-- End Keranjang Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="produk.php">
+    <i class="bi bi-bag-fill"></i>
+      <span>Produk</span>
+    </a>
+  </li><!-- End produk Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="transaksi.php">
-                    <i class="bi bi-card-list"></i>
-                    <span>Transaksi</span>
-                </a>
-            </li><!-- End Transaksi Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="keranjang.php">
+    <i class="bi bi-cart-check"></i>
+      <span>Keranjang</span>
+    </a>
+  </li><!-- End keranjang Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="laporan.php">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Laporan</span>
-                </a>
-            </li><!-- End Laporan Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="transaksi.php">
+    <i class="bi bi-cash"></i>
+      <span>Transaksi</span>
+    </a>
+  </li><!-- End transaksi Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pengguna.php">
-                    <i class="bi bi-dash-circle"></i>
-                    <span>Pengguna</span>
-                </a>
-            </li><!-- End pengguna Page Nav -->
-        </ul>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="laporan.php">
+    <i class="bi bi-envelope"></i>
+      <span>Laporan</span>
+    </a>
+  </li><!-- End Laporan Page Nav -->
 
-    </aside><!-- End Sidebar-->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="pengguna.php">
+    <i class="bi bi-person-add"></i>
+      <span>Pengguna</span>
+    </a>
+  </li><!-- End pengguna Page Nav -->
+
+</ul>
+
+</aside><!-- End Sidebar-->
 
     <main id="main" class="main">
 
@@ -166,7 +165,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="t_produk.php" class="btn btn-primary mt-3">
+                        <a href="t_pengguna.php" class="btn btn-primary mt-3">
                             <i class="bi bi-plus-lg"></i> Tambah Data
                         </a>
                     </div>
@@ -176,20 +175,17 @@
 
         <section class="section">
             <div class="row">
-
-                <div class="col-lg-6">
-
+                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-
                             <!-- Table with stripped rows -->
                             <table class="table table-striped mt-2">
                                 <thead>
                                     <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Nama Pengguna</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Aksi</th>
+                                        <th>No</th>
+                                        <th>Username</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -198,8 +194,7 @@
                                     $no = 1;
 
                                     // Cek apakah ada input pencarian
-                                    $query = isset($_POST['query']) ? mysqli_real_escape_string($koneksi, $_POST
-                                    ['query']) : '';
+                                    $query = isset($_POST['query']) ? mysqli_real_escape_string($koneksi, $_POST['query']) : '';
 
                                     // Query dasar
                                     $sql_query = "SELECT id_user, username, status FROM tb_user";
@@ -212,35 +207,36 @@
                                     $sql = mysqli_query($koneksi, $sql_query);
 
                                     if (mysqli_num_rows($sql) > 0) {
-                                       while ($hasil = mysqli_fetch_array($sql)) {
+                                        while ($hasil = mysqli_fetch_array($sql)) {
                                     ?>
                                             <tr>
-                                                 <td><?php echo $no++; ?></td>
-                                                 <td><?php echo $hasil['username']; ?></td>
-                                                 <td><?php echo $hasil['status']; ?></td>
-                                                 <td>
-                                                    <a href="h_pengguna.php?id=<?php echo $hasil['id_user']; ?>" 
-                                                    class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')">
-                                                       <i class="bi bi-trash"></i>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $hasil['username']; ?></td>
+                                                <td><?php echo $hasil['status']; ?></td>
+                                                <td>
+                                                    <a href="h_pengguna.php?id=<?php echo $hasil['id_user']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')">
+                                                        <i class="bi bi-trash"></i>
                                                     </a>
-                                                 </td>
+                                                </td>
                                             </tr>
                                         <?php
                                         }
                                     } else {
                                         ?>
                                         <tr>
-                                           <td colspan="4" class="text-center">Data tidak ditemukan</td>
+                                            <td colspan="4" class="text-center">Data tidak ditemukan</td>
                                         </tr>
                                     <?php
                                     }
                                     ?>
+
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -253,7 +249,7 @@
             &copy; Copyright <strong><span>cakraelektronik</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://instagram.com/cakraprama/">adamcakra</a>
+            Designed by <a href="https://instagram.com/cakraprama/" target="_blank">adamcakra</a>
         </div>
     </footer><!-- End Footer -->
 
