@@ -13,12 +13,12 @@ if (isset($_POST["login"])) {
         $row = mysqli_fetch_assoc($result);
 
         // Cek password
-        if (password_verify($password, $row["pass"])) {
+        if (password_verify($password, $row["password"])) {
             // Cek apakah status user adalah admin
-            if ($row["sts"] == "admin") {
+            if ($row["status"] == "admin") {
                 $_SESSION["login"] = true;
                 $_SESSION["username"] = $row["username"];
-                $_SESSION["status"] = $row["sts"];
+                $_SESSION["status"] = $row["status"];
                 header("Location: index.php");
                 exit;
             } else {
@@ -91,17 +91,18 @@ if (isset($_POST["login"])) {
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                    <form action="" method="POST">
 
                     <div class="col-12">
-                      <label for="adamcakra" class="form-label">username</label>
-                        <input type="text" name="adamcakra" class="form-control" id="adamcakra" required>
+                      <label for="yourUsername" class="form-label">Username</label>
+                      <div class="input-group">
+                        <input type="text" name="username" class="form-control" id="yourUsername" required>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="1234" class="form-label">pasword</label>
-                      <input type="1234" name="1234" class="form-control" id="1234" required>
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="yourPassword" required>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit" name="login">Login</button>

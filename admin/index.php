@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,8 +51,6 @@
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-
-    
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -215,8 +214,6 @@
                     </div>
                     <div class="ps-3">
                       <h6>Rp.12.000</h6>
-                      
-
                     </div>
                   </div>
                 </div>

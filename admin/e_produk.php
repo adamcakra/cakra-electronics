@@ -195,7 +195,7 @@ if (isset($_POST['update'])) {
 
 </aside><!-- End Sidebar-->
 
-    <main id="main" class="main">
+     <main id="main" class="main">
 
         <div class="pagetitle">
             <h1>Produk</h1>
@@ -207,51 +207,41 @@ if (isset($_POST['update'])) {
                 </ol>
             </nav>
         </div><!-- End Page Title -->
+
         <section class="section">
             <div class="row">
                 <div class="col-lg-6">
-
                     <div class="card">
                         <div class="card-body">
-
-                            <!-- Vertical Form -->
                             <form class="row g-3 mt-2" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="gambar_lama" value="<?php echo $data['gambar']; ?>">
                                 <div class="col-12">
                                     <label for="nm_produk" class="form-label">Nama Produk</label>
-                                    <input type="text" class="form-control" id="nm_produk" name="nm_produk" 
-                                    placeholder="Masukkan Nama Produk" value="<?php echo $data ['nm_produk']; ?>"
-                                    required>
+                                    <input type="text" class="form-control" id="nm_produk" name="nm_produk" value="<?php echo $data['nm_produk']; ?>" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="harga" class="form-label">Harga</label>
-                                    <input type="number" class="form-control" id="harga" name="harga" 
-                                    placeholder="Masukkan Harga Produk" value="<?php echo $data ['harga']; ?>"
-                                    required>
+                                    <input type="number" class="form-control" id="harga" name="harga" value="<?php echo $data['harga']; ?>" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="stok" class="form-label">Stok</label>
-                                    <input type="number" class="form-control" id="stok" name="stok" 
-                                    placeholder="Masukkan Stok Produk" value="<?php echo $data ['stok']; ?>"
-                                    required>
+                                    <input type="number" class="form-control" id="stok" name="stok" value="<?php echo $data['stok']; ?>" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="desk" class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" id="desk" name="desk" placeholder="Masukkan 
-                                    Deskripsi Produk" required><? echo data['ket']; ?></textarea>
+                                    <textarea class="form-control" id="desk" name="desk" required><?php echo $data['desk']; ?></textarea>
                                 </div>
                                 <div class="col-12">
                                     <label for="id_kategori" class="form-label">Kategori</label>
                                     <select class="form-control" id="id_kategori" name="id_kategori" required>
                                         <option value="">-- Pilih Kategori --</option>
                                         <?php
-                                        $query_kategori = mysqli_query($koneksi, "SELECT * FROM tb_ktg");
+                                        $query_kategori = mysqli_query($koneksi, "SELECT * FROM tb_kategori");
                                         while ($kategori = mysqli_fetch_array($query_kategori)) {
-                                            $selected = ($kategori['id_ktg'] == $data['id_ktg']) ? 'selected' : '';
-                                            echo "<option value='{$kategori['id_ktg']}' $selected>{$kategori['nm_ktg']}</option>";
+                                            $selected = ($kategori['id_kategori'] == $data['id_kategori']) ? 'selected' : '';
+                                            echo "<option value='{$kategori['id_kategori']}' $selected>{$kategori['nm_kategori']}</option>";
                                         }
                                         ?>
-                                        
                                     </select>
                                 </div>
                                 <div class="col-12">
@@ -263,19 +253,18 @@ if (isset($_POST['update'])) {
                                     <?php } ?>
                                 </div>
                                 <div class="text-center">
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
-                                    <button type="submit" class="btn btn-primary" name="update">Simpan</button>
+                                    <button type="submit" class="btn btn-primary" name="update">Update</button>
+                                    <a href="produk.php" class="btn btn-secondary">Kembali</a>
                                 </div>
                             </form>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
     </main><!-- End #main -->
+
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">

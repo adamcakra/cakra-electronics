@@ -19,7 +19,7 @@ if (isset($_POST['simpan'])) {
     $status = $_POST['status'];
 
     // Query untuk insert data ke tb_user
-    $query = mysqli_query($koneksi, "INSERT INTO tb_user (id_user, username, pass, sts) VALUES ('$id_user', '$username', '$password', '$status')");
+    $query = mysqli_query($koneksi, "INSERT INTO tb_user (id_user, username, password, status) VALUES ('$id_user', '$username', '$password', '$status')");
 
     // Notifikasi
     if ($query) {

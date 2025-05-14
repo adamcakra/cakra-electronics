@@ -2,7 +2,7 @@
 include "koneksi.php";
 
 // Mendapatkan kode produk otomatis
-$auto = mysqli_query($koneksi, "SELECT MAX(id_produk) AS max_code FROM tb_produk");
+$auto = mysqli_query ($koneksi, "SELECT MAX(id_produk) AS max_code FROM tb_produk");
 $hasil = mysqli_fetch_array($auto);
 $code = $hasil['max_code'];
 $urutan = (int)substr($code, 1, 3);
