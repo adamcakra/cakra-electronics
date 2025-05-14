@@ -60,7 +60,7 @@
                             <div class="col-lg-3">
                                 <div class="logo pb-sm-30 pb-xs-30">
                                     <a href="index.html">
-                                        <img src="images/menu/logo/1.jpg" alt="">
+                                        <h2>cakraelektronik</h2>
                                     </a>
                                 </div>
                             </div>

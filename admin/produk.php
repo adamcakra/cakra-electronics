@@ -80,7 +80,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <a class="dropdown-item d-flex align-items-center" href="logout.php">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
@@ -216,8 +216,8 @@
                                         <th scope="col">Nama Produk</th>
                                         <th scope="col">Harga</th>
                                         <th scope="col">Stok</th>
-                                        <th scope="col">Nama Kategori</th>
-                                        <th scope="col">aksi</th>
+                                        <th scope="col">Deskripsi</th>
+                                        <th scope="col">kategori produk</th>
                                         <th scope="col">gambar</th>
                                     </tr>
                                 </thead>

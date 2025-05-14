@@ -1,6 +1,38 @@
 <?php
 include "koneksi.php";
+session_start();
+require "koneksi.php";
 
+if (isset($_POST["login"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Cek apakah username ditemukan
+    $result = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE username='$username'");
+
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        // Cek password
+        if (password_verify($password, $row["password"])) {
+            // Cek apakah status user adalah admin
+            if ($row["status"] == "admin") {
+                $_SESSION["login"] = true;
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["status"] = $row["status"];
+                header("Location: index.php");
+                exit;
+            } else {
+                echo "<script>alert('Anda tidak memiliki akses sebagai admin.');</script>";
+            }
+          } else {
+            echo "<script>alert('Username atau password yang anda masukkan salah.');</script>";
+        }
+    } else {
+        echo "<script>alert('Username atau password yang anda masukkan salah.');</script>";
+    }
+  }
+  
 // Mendapatkan kode produk otomatis
 $auto = mysqli_query ($koneksi, "SELECT MAX(id_produk) AS max_code FROM tb_produk");
 $hasil = mysqli_fetch_array($auto);
