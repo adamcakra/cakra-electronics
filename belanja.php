@@ -255,7 +255,7 @@ session_start();
                         <!-- Begin Li's Banner Area -->
                         <div class="single-banner shop-page-banner">
                             <a href="#">
-                                <img src="images/bg-banner/3.png" alt="Li's Static Banner" height="350">
+                                <img src="images/global elektronik/.jpeg" alt="Li's Static Banner" height="350">
                             </a>
                         </div>
                         <!-- Li's Banner Area End Here -->
