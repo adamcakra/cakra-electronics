@@ -82,6 +82,7 @@ if (isset($_POST["login"])) {
         <div class="body-wrapper">
             <!-- Begin Header Area -->
             <header>
+                <header class="li-header-4">
                 <!-- Begin Header Middle Area -->
             <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
                 <div class="container">
@@ -268,9 +269,13 @@ if (isset($_POST["login"])) {
                             </form>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                            <form action="#">
-                                
-                            </form>
+                           <!-- Banner Image -->
+                        <div class="banner-wrapper text-center">
+                            <img src="images/bg-banner/4.png" alt="Banner Toko Elektronik" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 100%;">
+                            <p class="mt-3" style="font-size: 16px; color: #555;">
+                                Temukan smartphone, tablet, laptop, dan produk elektronik terbaik hanya di cakraelektronik!<br>
+                                <a href="register.php" style="color: #007bff; text-decoration: underline;">Belum punya akun? Register di sini.</a>
+                            </p>
                         </div>
                     </div>
                 </div>

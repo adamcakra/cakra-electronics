@@ -70,6 +70,7 @@ $data = mysqli_fetch_array($sql);
         <div class="body-wrapper">
             <!-- Begin Header Area -->
             <header>
+                <header class="li-header-4">
                 <!-- Begin Header Top Area -->
                 <div class="header-top">
                     <div class="container">
@@ -99,7 +100,7 @@ $data = mysqli_fetch_array($sql);
                                         <!-- Begin Header Middle Wishlist Area -->
                                         <li class="hm-wishlist">
                                             <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count">0</span>
+                                                <span class="cart-item-count wishlist-item-count"></span>
                                                 <i class="fa fa-user-o"></i>
                                             </a>
                                         </li>
@@ -151,7 +152,7 @@ $data = mysqli_fetch_array($sql);
                 <div class="container">
                     <div class="breadcrumb-content">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html">Beranda</a></li>
                             <li class="active">Register</li>
                         </ul>
                     </div>
@@ -163,6 +164,14 @@ $data = mysqli_fetch_array($sql);
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+                            <!-- Banner Image -->
+                        <div class="banner-wrapper text-center">
+                            <img src="images/bg-banner/4.png" alt="Banner Toko Elektronik" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 100%;">
+                            <p class="mt-3" style="font-size: 16px; color: #555;">
+                                Temukan smartphone, tablet, laptop, dan produk elektronik terbaik hanya di cakraelektronik!<br>
+                                <a href="login.php" style="color: #007bff; text-decoration: underline;">Sudah punya akun? Login di sini.</a>
+                            </p>
+                        </div>
                             <!-- Login Form s-->
                             <form action="#" >
                             </form>
