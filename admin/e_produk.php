@@ -44,7 +44,7 @@ if (isset($_POST['update'])) {
     }
 
     // Update data ke database
-    $query = mysqli_query($koneksi, "UPDATE tb_produk SET nm_produk='$nm_produk', harga='$harga', stok='$stok', ket='$desk', id_ktg='$id_kategori', gambar='$imgnewfile' WHERE id_produk='$id_produk'");
+    $query = mysqli_query($koneksi, "UPDATE tb_produk SET nm_produk='$nm_produk', harga='$harga', stok='$stok', deskripsi='$deskripsi', id_ktg='$id_kategori', gambar='$imgnewfile' WHERE id_produk='$id_produk'");
 
     if ($query) {
         echo "<script>alert('Data produk berhasil diupdate!')</script>";
