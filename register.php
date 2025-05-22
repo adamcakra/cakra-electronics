@@ -284,7 +284,8 @@ $data = mysqli_fetch_array($sql);
                                 <div class="footer-logo">
                                     <h1>cakraelektronik</h1>
                                     <p class="info">
-                                        Cakraelektronik adalah toko online pertama di kota blora dan sebagai pusat  teknologi di Blora
+                                      Selamat Datang di Cakra Elektronik – Solusi Kebutuhan Elektronik Terbaik Anda!
+Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online terpercaya Anda untuk berbagai produk elektronik berkualitas.
                                 </div>
                                 <ul class="des">
                                     <li>

@@ -1,11 +1,14 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     
-<!-- single-product31:30-->
+<!-- shopping-cart31:32-->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Detail Product || cakraelektronik</title>
+        <title>Shopping Cart || CakraElektronik</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
@@ -64,7 +67,8 @@
                             <!-- Begin Header Top Right Area -->
                             <div class="col-lg-9 col-md-8">
                                 <div class="header-top-right">
-                                    <ul class="ht-menu">      
+                                    <ul class="ht-menu">
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -74,10 +78,11 @@
                 </div>
                 <!-- Header Top Area End Here -->
                 <!-- Begin Header Middle Area -->
-            <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
-                <div class="container">
-                    <div class="row">
-                        <!-- Begin Header Logo Area -->
+                <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
+                    <div class="container">
+                        <div class="row d-flex align-items-center">
+                            <!-- Begin Header Logo Area -->
+                            <!-- Begin Header Logo Area -->
                         <div class="col-lg-3">
                             <div class="logo pb-sm-30 pb-xs-30">
                                 <a href="index.php">
@@ -86,24 +91,26 @@
                             </div>
                         </div>
                         <!-- Header Logo Area End Here -->
+                            <!-- Header Logo Area End Here -->
                             <!-- Begin Header Middle Right Area -->
                             <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                                 <!-- Begin Header Middle Searchbox Area -->
-                            <form action="" method="GET" class="hm-searchbox">
-                                <select name="kategori" class="nice-select select-search-category">
-                                    <option value="">All</option>
-                                    <?php
-                                    include 'admin/koneksi.php';
-                                    $kategoriQuery = mysqli_query($koneksi, "SELECT * FROM tb_kategori ORDER BY nm_kategori ASC");
-                                    while ($kategori = mysqli_fetch_assoc($kategoriQuery)) {
-                                        $selected = (isset($_GET['kategori']) && $_GET['kategori'] == $kategori['id_kategori']) ? 'selected' : '';
-                                        echo "<option value='{$kategori['id_kategori']}' $selected>{$kategori['nm_kategori']}</option>";
-                                    }
-                                    ?>
-                                </select>
-                                <input type="text" name="keyword" placeholder="Enter your search key ..." value="<?= isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : '' ?>">
-                                <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
-                            </form>
+                                <form action="" method="GET" class="hm-searchbox">
+                                    <select name="kategori" class="nice-select select-search-category">
+                                        <option value="">All</option>
+                                        <?php
+                                        include 'admin/koneksi.php';
+                                        $kategoriQuery = mysqli_query($koneksi, "SELECT * FROM tb_kategori ORDER BY nm_kategori ASC");
+                                        while ($kategori = mysqli_fetch_assoc($kategoriQuery)) {
+                                            $selected = (isset($_GET['kategori']) && $_GET['kategori'] == $kategori['id_kategori']) ? 'selected' : '';
+                                            echo "<option value='{$kategori['id_kategori']}' $selected>{$kategori['nm_kategori']}</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                    <input type="text" name="keyword" placeholder="Enter your search key..." value="<?= isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : ''; ?>">
+                                    <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                                <!-- Header Middle Searchbox Area End Here -->
                                 <!-- Begin Header Middle Right Area -->
                                 <div class="header-middle-right">
                                     <ul class="hm-menu">
@@ -137,6 +144,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
+                                        
                                        
                                         <!-- Begin Header Mini Cart Area -->
                                         <li class="hm-minicart">
@@ -150,11 +158,11 @@
                                             <div class="minicart">
                                                 <ul class="minicart-product-list">
                                                     <li>
-                                                        <a href="single-product.html" class="minicart-product-image">
+                                                        <a href="single-product.php" class="minicart-product-image">
                                                             <img src="images/product/small-size/1.jpg" alt="cart products">
                                                         </a>
                                                         <div class="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
+                                                            <h6><a href="single-product.php">Aenean eu tristique</a></h6>
                                                             <span>£40 x 1</span>
                                                         </div>
                                                         <button class="close">
@@ -162,11 +170,11 @@
                                                         </button>
                                                     </li>
                                                     <li>
-                                                        <a href="single-product.html" class="minicart-product-image">
+                                                        <a href="single-product.php" class="minicart-product-image">
                                                             <img src="images/product/small-size/2.jpg" alt="cart products">
                                                         </a>
                                                         <div class="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
+                                                            <h6><a href="single-product.php">Aenean eu tristique</a></h6>
                                                             <span>£40 x 1</span>
                                                         </div>
                                                         <button class="close">
@@ -187,52 +195,7 @@
                                         </li>
                                         <?php } ?>
                                         <!-- Header Middle Wishlist Area End Here -->
-                                         <li class="hm-minicart">
-                                            <div class="hm-minicart-trigger">
-                                                <span class="item-icon"></span>
-                                                <span class="item-text">£80.00
-                                                    <span class="cart-item-count">2</span>
-                                                </span>
-                                            </div>
-                                            <span></span>
-                                            <div class="minicart">
-                                                <ul class="minicart-product-list">
-                                                    <li>
-                                                        <a href="single-product.html" class="minicart-product-image">
-                                                            <img src="images/product/small-size/1.jpg" alt="cart products">
-                                                        </a>
-                                                        <div class="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                            <span>£40 x 1</span>
-                                                        </div>
-                                                        <button class="close">
-                                                            <i class="fa fa-close"></i>
-                                                        </button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="single-product.html" class="minicart-product-image">
-                                                            <img src="images/product/small-size/2.jpg" alt="cart products">
-                                                        </a>
-                                                        <div class="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                            <span>£40 x 1</span>
-                                                        </div>
-                                                        <button class="close">
-                                                            <i class="fa fa-close"></i>
-                                                        </button>
-                                                    </li>
-                                                </ul>
-                                                <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
-                                                <div class="minicart-button">
-                                                    <a href="checkout.html" class="li-button li-button-dark li-button-fullwidth li-button-sm">
-                                                        <span>View Full Cart</span>
-                                                    </a>
-                                                    <a href="checkout.html" class="li-button li-button-fullwidth li-button-sm">
-                                                        <span>Checkout</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 <!-- Header Middle Right Area End Here -->
@@ -242,6 +205,7 @@
                     </div>
                 </div>
                 <!-- Header Middle Area End Here -->
+                 
                 <!-- Begin Header Bottom Area -->
                  <div class="header-bottom header-sticky stick d-none d-lg-block d-xl-block">
                     <div class="container">
@@ -283,177 +247,186 @@
                 <div class="container">
                     <div class="breadcrumb-content">
                         <ul>
-                            <li><a href="index.php">Beranda</a></li>
-                            <li class="active">Detail Product</li>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Shopping Cart</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Li's Breadcrumb Area End Here -->
-            <!-- content-wraper start -->
-             <?php
-             include 'admin/koneksi.php'; // koneksi ke database
-
-            $id = $_GET['id'];
-            $query = mysqli_query($koneksi, "SELECT p.*, k.nm_kategori FROM tb_produk p LEFT JOIN tb_kategori k ON p.id_kategori = k.id_kategori WHERE id_produk = '$id'");
-            $data = mysqli_fetch_assoc($query);
-            ?>
-
-            <div class="content-wraper">
+            <!--Shopping Cart Area Strat-->
+            <div class="Shopping-cart-area pt-60 pb-60">
                 <div class="container">
-                    <div class="row single-product-area">
-                        <div class="col-lg-5 col-md-6">
-                           <!-- Product Details Left -->
-                            <div class="product-details-left">
-                                <div class="product-details-images slider-navigation-1">
-                                    <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="admin/produk_img/<?= $data['gambar'] ?>" data-gall="myGallery">
-                                            <img src="admin/produk_img/<?= $data['gambar'] ?>" alt="<?= $data['nm_produk'] ?>" width="300" height="300">
-                                        </a>
+                    <div class="row">
+                        <div class="col-12">
+                            <?php
+                            include "admin/koneksi.php";
+                            if (isset($_POST['checkout'])) {
+                                if (!isset($_SESSION['id_user'])) {
+                                    echo "<script>alert('User tidak ditemukan'); window.location= 'cart.php';</script>";
+                                    exit;
+                                }
+
+                                $id_user = $_SESSION['id_user'];
+
+                                $query_pesanan = mysqli_query($koneksi, "SELECT p.*, pr.harga FROM tb_pesanan p JOIN tb_produk pr ON p.id_produk = pr.id_produk WHERE p.id_user = '$id_user'");
+
+                                if (!$query_pesanan || mysqli_num_rows($query_pesanan) == 0) {
+                                    echo "<script>alert('Keranjang kosong'); window.location= 'cart.php';</script>";
+                                    exit;
+                                }
+
+                                $subtotal = 0;
+                                $items = [];
+                                while ($row = mysqli_fetch_assoc($query_pesanan)) {
+                                    $total = $row['qty'] * $row['harga'];
+                                    $subtotal += $total;
+                                    $items[] = [
+                                        'id_produk' => $row['id_produk'],
+                                        'qty' => $row['qty'],
+                                        'harga' => $total
+                                    ];
+                                }
+
+                                $diskon = 0;
+                                if ($subtotal > 3000000) {
+                                    $diskon = 0.07 * $subtotal;
+                                } else if ($subtotal > 1500000) {
+                                    $diskon = 0.05 * $subtotal;
+                                }
+                                $total_bayar = $subtotal - $diskon;
+                                
+                                $result = mysqli_query($koneksi, "SELECT MAX(RIGHT(id_jual, 3)) AS max_id FROM tb_jual");
+                                $row = mysqli_fetch_assoc($result);
+                                $last_id = $row['max_id'];
+                                $next_id = 'T' . str_pad((int)$last_id + 1, 3, '0', STR_PAD_LEFT);
+
+                                $tgl = date('Y-m-d H:i:s');
+                                $query_insert_jual = mysqli_query($koneksi, "INSERT INTO tb_jual (id_jual, id_user, tgl_jual, total, diskon) VALUES ('$next_id', '$id_user', '$tgl', '$total_bayar', '$diskon')");
+                                if (!$query_insert_jual) {
+                                    echo "<script>alert('Gagal menyimpan data penjualan'); window.location= 'cart.php';</script>";
+                                    exit;
+                                }
+
+                                foreach ($items as $item) {
+                                    $query_dtl = mysqli_query($koneksi, "INSERT INTO tb_jualdtl (id_jual, id_produk, qty, harga) VALUES ('$next_id', '{$item['id_produk']}', '{$item['qty']}', '{$item['harga']}')");
+                                    if (!$query_dtl) {
+                                        echo "<script>alert('Gagal menyimpan data detail penjualan'); window.location= 'cart.php';</script>";
+                                        exit;
+                                    }
+                                }
+
+                                $hapus = mysqli_query($koneksi, "DELETE FROM tb_pesanan WHERE id_user = '$id_user'");
+                                if (!$hapus) {
+                                    echo "<script>alert('Gagal menghapus data keranjang'); window.location= 'cart.php';</script>";
+                                    exit;
+                                }
+
+                                echo "<script>alert('Pesanan berhasil dibuat'); window.location= 'index.php';</script>";
+
+                            }
+                            ?> 
+                            <form method="post" action="">
+                                <div class="table-content table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="li-product-remove">remove</th>
+                                                <th class="li-product-thumbnail">images</th>
+                                                <th class="cart-product-name">Product</th>
+                                                <th class="li-product-price">Unit Price</th>
+                                                <th class="li-product-quantity">Quantity</th>
+                                                <th class="li-product-subtotal">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            include "admin/koneksi.php";
+
+                                            if (!isset($_SESSION['username'])) {
+                                                echo "<tr><td colspan='6'>Silakan login terlebih dahulu.</td></tr>";
+                                                exit;
+                                            }
+                                            $username = $_SESSION['username'];
+
+                                            $query_user = mysqli_query($koneksi, "SELECT id_user FROM tb_user WHERE username = '$username'");
+                                            $data_user = mysqli_fetch_assoc($query_user);
+                                            $id_user = $data_user['id_user'];
+
+                                            $query_pesanan = mysqli_query($koneksi, "SELECT p.*, pr.nm_produk, pr.gambar, pr.harga FROM tb_pesanan p JOIN tb_produk pr ON p.id_produk = pr.id_produk WHERE p.id_user = '$id_user'");
+                                            if (mysqli_num_rows($query_pesanan) > 0) {
+                                                while ($row = mysqli_fetch_assoc($query_pesanan)) {
+                                                    $total = $row['qty'] * $row['harga'];
+                                                    echo "<tr>
+                                                <td class='li-product-remove'><a href='hapus_pesanan.php?id={$row['id_pesanan']}' onclick='return confirm(\"Yakin hapus item ini\")'><i class='fa fa-times'></i></a></td>
+                                                <td class='li-product-thumbnail'><a href='#'><img src='admin/produk_img/{$row['gambar']}' alt='{$row['nm_produk']}' width='70'></a></td>
+                                                <td class='li-product-name'><a href='#'>{$row['nm_produk']}</a></td>
+                                                <td class='li-product-price'><span class='amount'>Rp" . number_format($row['harga'], 0, ',', '.') . "</span></td>
+                                                <td class='quantity'>
+                                                 <label>Quantity</label>
+                                                    <div class='cart-plus-minus'>
+                                                        <input class='cart-plus-minus-box' value='{$row['qty']}' type='text' readonly>
+                                                        <div class='dec qtybutton'><i class='fa fa-angle-down'></i></div>
+                                                        <div class='inc qtybutton'><i class='fa fa-angle-up'></i></div>
+                                                    </div>
+                                                </td>
+                                            <td class='product-subtotal'><span class='amount'>Rp" . number_format($total, 0, ',', '.') . "</span></td>
+                                        </tr>";
+                                                }
+                                            } else {
+                                                echo "<tr><td colspan='6'>Keranjang kosong.</td></tr>";
+                                            
+                                            }
+                                            ?>
+ 
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="coupon-all">
+                                            <div class="coupon2">
+                                                <input class="button" name="update_cart" value="Update cart" type="submit">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--// Product Details Left -->
-                        </div>
+                                <div class="row">
+                                    <div class="col-md-5 ml-auto">
+                                        <div class="cart-page-total">
+                                            <h2>Total Pesanan</h2>
+                                            <?php
+                                            $subtotal = 0;
+                                            mysqli_data_seek($query_pesanan, 0);
+                                            while ($row = mysqli_fetch_assoc($query_pesanan)) {
+                                                $subtotal += $row['qty'] * $row['harga'];
+                                            }
 
-                        <?php if ($data['stok'] == 0) : ?>
-                            <script>
-                                alert('Stok produk habis');
-                                window.location.href = 'belanja.php';
-                            </script>
-                        <?php endif; ?>
+                                            $diskon = 0;
+                                            if ($subtotal > 3000000) {
+                                                $diskon = 0.07 * $subtotal;
+                                            } elseif ($subtotal > 1500000) {
+                                                $diskon = 0.05 * $subtotal;
+                                            }
 
-                        <div class="col-lg-7 col-md-6">
-                            <div class="product-details-view-content p-2">
-                                <div class="product-info">
-                                    <h2><?= $data['nm_produk'] ?></h2>
-                                    <span class="new-price new-price-2"> Rp<?= number_format($data['harga'], 0, ',', '.') ?></span>
-                                    <div class="product-desc">
-                                        <p>
-                                            <span><?= nl2br($data['desk']) ?></span>
-                                        </p>
-                                        <p><strong>Stok Tersedia:</strong> <?= $data['stok'] ?> unit</p>
-                                    </div>
-                                    
-                                    <div class="single-add-to-cart">
-                                        <form action="tambah_ke_keranjang.php" method="POST" class="cart-quantity">
-                                            <input type="hidden" name="id_produk" value="<?= $data['id_produk'] ?>">
-                                            <input type="hidden" name="id_user" value="<?= $_SESSION['id_user'] ?>">
-                                            <input type="hidden" name="harga" value="<?= $data['harga'] ?>">
-                                            <input type="hidden" name="redirect_url" value="<?= $_SERVER['REQUEST_URI'] ?>">
-                                            <div class="quantity">
-                                                <label>Jumlah</label>
-                                                <div class="cart-plus-minus">
-                                                    <input name="jumlah" class="cart-plus-minus-box" value="1"
-                                                    type="number" min="1" max="<?= $data['stok'] ?>">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </div>
-                                            <button class="add-to-cart" type="submit">Add to cart</button>
-                                        </form>
-                                    </div>
-                                    <div class="product-additional-info pt-25">
-                                        
-                                        <div class="product-social-sharing pt-25">
+                                            $total_bayar = $subtotal - $diskon;
+                                            ?>
+                                            
                                             <ul>
-                                                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
-                                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                                                <li class="instagram"><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                                <li>Subtotal <span>Rp <?= number_format($subtotal, 0, ',', '.') ?></span></li>
+                                                <li>Diskon <span>Rp <?= number_format($diskon, 0, ',', '.') ?></span></li>
+                                                <li>Total <span>Rp <?= number_format($total_bayar, 0, ',', '.') ?></span></li>
                                             </ul>
+                                            <button type="submit" name="checkout" class="btn btn-dark mt-3">Checkout</button>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-            <!-- content-wraper end -->
-            <!-- Begin Product Area -->
-            <div class="product-area pt-35">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="li-product-tab">
-                                <ul class="nav li-product-menu">
-                                   <li><a class="active" data-toggle="tab" href="#description"><span>Deskripsi</span></a></li>
-                                </ul>               
-                            </div>
-                            <!-- Begin Li's Tab Menu Content Area -->
-                        </div>
-                    </div>
-                    <div class="tab-content">
-                        <div id="description" class="tab-pane active show" role="tabpanel">
-                            <div class="product-description">
-                                <span><?= nl2br($data['desk']) ?></span>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Product Area End Here -->
-            <!-- Begin Li's Laptop Product Area -->
-            <section class="product-area li-laptop-product pt-30 pb-50">
-                <div class="container">
-                    <div class="row">
-                        <!-- Begin Li's Section Area -->
-                        <div class="col-lg-12">
-                            <div class="li-section-title">
-                                <h2>
-                                    <span>Produk Lainnya</span>
-                                </h2>
-                            </div>
-                            <div class="row">
-                                <div class="product-active owl-carousel">
-                                    <?php
-                                    include 'admin/koneksi.php';
-                                    $id_produk = $_GET['id'];
-
-                                    $query_produk_lain = mysqli_query($koneksi, "SELECT * FROM tb_produk WHERE id_produk != '$id_produk' ORDER BY RAND() LIMIT 6");
-                                    while ($p = mysqli_fetch_array($query_produk_lain)) {
-                                    ?>
-                                    
-                                    <div class="col-lg-12">
-                                        <!-- single-product-wrap start -->
-                                        <div class="single-product-wrap">
-                                            <div class="product-image">
-                                                <a href="detail_produk.php?id_produk=<?= $p['id_produk'] ?>">
-                                                    <img src="admin/produk_img/<?= $p['gambar'] ?>" alt="<?= $p['nm_produk'] ?>" width="300" height="300">
-                                                </a>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="#"><?= $p['id_kategori'] ?></a>
-                                                        </h5>
-                                                    </div>
-                                                    <h4><a class="product_name" href="detail_produk.php?id_produk=<?= $p['id_produk'] ?>"><?= $p['nm_produk'] ?></a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">Rp<?= number_format($p['harga'], 0, ',', '.') ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="add-actions">
-                                                    <ul class="add-actions-link">
-                                                        <li class="add-cart active"><a href="detail_produk.php?id_produk=<?= $p['id_produk'] ?>">Beli Sekarang</a></li>
-                                                        <li><a href="detail_produk.php?id_produk=<?= $p['id_produk'] ?>" title="Quick View" class="quick-view-btn"><i class="fa fa-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- single-product-wrap end -->
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Li's Section Area End Here -->
-                    </div>
-                </div>
-            </section>
-            <!-- Li's Laptop Product Area End Here -->
+            <!--Shopping Cart Area End-->
            <!-- Begin Footer Area -->
         <div class="footer">
             <!-- Begin Footer Static Top Area -->
@@ -535,7 +508,7 @@
                                     <h1>cakraelektronik</h1>
                                     <p class="info">
                                        Selamat Datang di Cakra Elektronik – Solusi Kebutuhan Elektronik Terbaik Anda!
-Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online terpercaya Anda untuk berbagai produk elektronik berkualitas. 
+                                       Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online terpercaya Anda untuk berbagai produk elektronik berkualitas.
                                 </div>
                                 <ul class="des">
                                     <li>
@@ -624,6 +597,7 @@ Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online ter
             <!-- Footer Static Bottom Area End Here -->
         </div>
         <!-- Footer Area End Here -->
+        </div>
         <!-- Body Wrapper End Here -->
         <!-- jQuery-V1.12.4 -->
         <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -669,5 +643,5 @@ Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online ter
         <script src="js/main.js"></script>
     </body>
 
-<!-- single-product31:32-->
+<!-- shopping-cart31:32-->
 </html>
