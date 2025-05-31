@@ -75,7 +75,7 @@ $html = '<html>
 </head>
 <body>
 
-<h1 align="center">DigitalOracle</h1>
+<h1 align="center">cakraelektronik</h1>
 <hr>
 <h1 align="center">LAPORAN PRODUK BERDASARKAN KATEGORI</h1>
 
