@@ -101,7 +101,7 @@ include "koneksi.php";
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link " href="index.php">
+    <a class="nav-link collapsed" href="index.php">
       <i class="bi bi-grid"></i>
       <span>Beranda</span>
     </a>
@@ -143,7 +143,7 @@ include "koneksi.php";
   </li><!-- End Laporan Page Nav -->
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="pengguna.php">
+    <a class="nav-link" href="pengguna.php">
     <i class="bi bi-person-add"></i>
       <span>Pengguna</span>
     </a>

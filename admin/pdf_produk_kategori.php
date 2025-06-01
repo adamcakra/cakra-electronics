@@ -9,7 +9,7 @@ function query($query)
     $result = mysqli_query($koneksi, $query);
     $rows = [];
     while ($row = mysqli_fetch_assoc($result)) {
-        $row[] = $row;
+        $rows[] = $row; 
     }
     return $rows;
 }

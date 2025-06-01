@@ -24,7 +24,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Beranda - cakraelektronik Admin</title>
+    <title>Laporan - cakraelektronik Admin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -105,7 +105,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.php">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -140,7 +140,7 @@ if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
       </li><!-- End transaksi Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="laporan.php">
+        <a class="nav-link" href="laporan.php">
         <i class="bi bi-envelope"></i>
           <span>Laporan</span>
         </a>

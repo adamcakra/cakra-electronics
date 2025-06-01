@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Produk - cakraelektronik Admin</title>
+    <title>Keranjang - cakraelektronik Admin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -44,13 +44,7 @@
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
 
-        <div class="search-bar">
-            <form class="search-form d-flex align-items-center" method="GET" action="">
-                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-            </form>
-        </div><!-- End Search Bar -->
-
+       
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
 
@@ -100,7 +94,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.php">
+        <a class="nav-link  collapsed" href="index.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -121,7 +115,7 @@
       </li><!-- End produk Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="keranjang.php">
+        <a class="nav-link" href="keranjang.php">
         <i class="bi bi-cart-check"></i>
           <span>Keranjang</span>
         </a>
