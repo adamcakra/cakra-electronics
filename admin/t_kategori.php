@@ -127,24 +127,24 @@ if (isset($_POST['simpan'])) {
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
+   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link-collapsed " href="index.php">
-          <i class="bi bi-house-door"></i>
+        <a class="nav-link collapsed" href="index.php">
+          <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
-      </li><!-- End beranda Nav -->
+      </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link" href="kategori.php">
-        <i class="bi bi-tags"></i>
+        <i class="bi bi-app-indicator"></i>
           <span>Kategori produk</span>
         </a>
-      </li><!-- End kategori Produk Page Nav -->
+      </li><!-- End kategori Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="produk.php">
@@ -183,7 +183,7 @@ if (isset($_POST['simpan'])) {
 
     </ul>
 
-  </aside><!-- End Sidebar-->
+  </aside><!-- End Sidebar-->>
 
   <main id="main" class="main">
 

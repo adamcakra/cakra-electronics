@@ -143,7 +143,7 @@ if (isset($_POST['update'])) {
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link " href="index.php">
+    <a class="nav-link collapsed" href="index.php">
       <i class="bi bi-grid"></i>
       <span>Beranda</span>
     </a>
@@ -157,7 +157,7 @@ if (isset($_POST['update'])) {
   </li><!-- End kategori Page Nav -->
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="produk.php">
+    <a class="nav-link " href="produk.php">
     <i class="bi bi-bag-fill"></i>
       <span>Produk</span>
     </a>
@@ -248,9 +248,7 @@ if (isset($_POST['update'])) {
                                     <label for="gambar" class="form-label">Gambar Produk</label>
                                     <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">
                                     <br>
-                                    <?php if ($data['gambar']) { ?>
-                                        <img src="produk_img/<?php echo $data['gambar']; ?>" width="150">
-                                    <?php } ?>
+                                   
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary" name="update">Update</button>
