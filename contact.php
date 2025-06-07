@@ -237,17 +237,20 @@ session_start();
             <!-- Begin Contact Main Page Area -->
             <div class="contact-main-page mt-60 mb-40 mb-md-40 mb-sm-40 mb-xs-40">
                 <div class="container mb-60">
-                    <div id="google-map"></div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.973684215974!2d111.58743831018873!3d-7.1290404928451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e776411abeabb93%3A0x3ccba806cf9ef497!2sSTT%20Ronggolawe%20Cepu!5e0!3m2!1sid!2sid!4v1749194182778!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+            </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                             <div class="contact-page-side-content">
                                 <h3 class="contact-page-title">Contact Us</h3>
-                                <p class="contact-page-message mb-25">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>
+                                <p class="contact-page-message mb-25"> Selamat Datang di Cakra Elektronik – Solusi Kebutuhan Elektronik Terbaik Anda!
+                                       Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online terpercaya Anda untuk berbagai produk elektronik berkualitas.</p>
                                 <div class="single-contact-block">
                                     <h4><i class="fa fa-fax"></i> Alamat</h4>
-                                    <p>  Jl. Ahmad Dahlan  No. 11, Jepon, Blora , Indonesia</p>
+                                    <p>  Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia</p>
                                 </div>
                                 <div class="single-contact-block">
                                     <h4><i class="fa fa-phone"></i> telephone</h4>
@@ -380,7 +383,7 @@ session_start();
                                 <ul class="des">
                                     <li>
                                         <span>Alamat: </span>
-                                        Jl. Ahmad Dahlan  No. 11, Jepon, Blora , Indonesia
+                                        Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia
                                     </li>
                                     <li>
                                         <span>Telepon: </span>

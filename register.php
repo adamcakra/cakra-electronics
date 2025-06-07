@@ -166,7 +166,7 @@ $data = mysqli_fetch_array($sql);
                         <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                             <!-- Banner Image -->
                         <div class="banner-wrapper text-center">
-                            <img src="images/bg-banner/4.png" alt="Banner Toko Elektronik" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 100%;">
+                            <img src="images/banner/2_1.jpg" alt="Banner Toko Elektronik" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 100%;">
                             <p class="mt-3" style="font-size: 16px; color: #555;">
                                 Temukan smartphone, tablet, laptop, dan produk elektronik terbaik hanya di cakraelektronik!<br>
                                 <a href="login.php" style="color: #007bff; text-decoration: underline;">Sudah punya akun? Login di sini.</a>
@@ -290,7 +290,7 @@ Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online ter
                                 <ul class="des">
                                     <li>
                                         <span>Alamat: </span>
-                                        Jl. Ahmad Dahlan  No. 11, Jepon, Blora , Indonesia
+                                       Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia
                                     </li>
                                     <li>
                                         <span>Telepon: </span>

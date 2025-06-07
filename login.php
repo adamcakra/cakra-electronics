@@ -138,54 +138,6 @@ if (isset($_POST["login"])) {
                                             </ul>
                                         </li>
 
-
-                                        <!-- Mini Cart -->
-                                        <li class="hm-minicart">
-                                            <div class="hm-minicart-trigger">
-                                                <span class="item-icon"></span>
-                                                <span class="item-text">£80.00
-                                                    <span class="cart-item-count">2</span>
-                                                </span>
-                                            </div>
-                                            <span></span>
-                                            <div class="minicart">
-                                                <ul class="minicart-product-list">
-                                                    <li>
-                                                        <a href="single-product.html" class="minicart-product-image">
-                                                            <img src="images/product/small-size/1.jpg" alt="cart products">
-                                                        </a>
-                                                        <div class="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                            <span>£40 x 1</span>
-                                                        </div>
-                                                        <button class="close">
-                                                            <i class="fa fa-close"></i>
-                                                        </button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="single-product.html" class="minicart-product-image">
-                                                            <img src="images/product/small-size/2.jpg" alt="cart products">
-                                                        </a>
-                                                        <div class="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                            <span>£40 x 1</span>
-                                                        </div>
-                                                        <button class="close">
-                                                            <i class="fa fa-close"></i>
-                                                        </button>
-                                                    </li>
-                                                </ul>
-                                                <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
-                                                <div class="minicart-button">
-                                                    <a href="cart.php" class="li-button li-button-dark li-button-fullwidth li-button-sm">
-                                                        <span>View Full Cart</span>
-                                                    </a>
-                                                    <a href="checkout.html" class="li-button li-button-fullwidth li-button-sm">
-                                                        <span>Checkout</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
                                     <?php } ?>
                                 </ul>
                             </div>
@@ -271,7 +223,7 @@ if (isset($_POST["login"])) {
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
                            <!-- Banner Image -->
                         <div class="banner-wrapper text-center">
-                            <img src="images/bg-banner/4.png" alt="Banner Toko Elektronik" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 100%;">
+                            <img src="images/bg-banner/1.jpg" alt="Banner Toko Elektronik" class="img-fluid" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 100%;">
                             <p class="mt-3" style="font-size: 16px; color: #555;">
                                 Temukan smartphone, tablet, laptop, dan produk elektronik terbaik hanya di cakraelektronik!<br>
                                 <a href="register.php" style="color: #007bff; text-decoration: underline;">Belum punya akun? Register di sini.</a>
@@ -367,7 +319,7 @@ Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online ter
                                 <ul class="des">
                                     <li>
                                         <span>Alamat: </span>
-                                        Jl. Ahmad Dahlan  No. 11, Jepon, Blora , Indonesia
+                                       Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia
                                     </li>
                                     <li>
                                         <span>Telepon: </span>

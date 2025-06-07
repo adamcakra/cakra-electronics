@@ -1,37 +1,25 @@
 <?php
 session_start();
-require "koneksi.php";
+include "koneksi.php";
 
-if (isset($_POST["login"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+// Cek apakah sudah login
+if (!isset($_SESSION["login"])) {
+  header("Location: login.php");
+  exit;
+}
 
-    // Cek apakah username ditemukan
-    $result = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE username='$username'");
+// Cek apakah status tersedia dan pastikan user adalah admin
+if (!isset($_SESSION["status"]) || $_SESSION["status"] !== "admin") {
+  echo "<script>
+    alert('Akses ditolak! Halaman ini hanya untuk Admin.');
+    window.location.href='login.php';
+    </script>";
+  exit;
+}
+?>
 
-    if (mysqli_num_rows($result) === 1) {
-        $row = mysqli_fetch_assoc($result);
 
-        // Cek password
-        if (password_verify($password, $row["password"])) {
-            // Cek apakah status user adalah admin
-            if ($row["status"] == "admin") {
-                $_SESSION["login"] = true;
-                $_SESSION["username"] = $row["username"];
-                $_SESSION["status"] = $row["status"];
-                header("Location: index.php");
-                exit;
-            } else {
-                echo "<script>alert('Anda tidak memiliki akses sebagai admin.');</script>";
-            }
-          } else {
-            echo "<script>alert('Username atau password yang anda masukkan salah.');</script>";
-        }
-    } else {
-        echo "<script>alert('Username atau password yang anda masukkan salah.');</script>";
-    }
-  }
-  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +27,7 @@ if (isset($_POST["login"])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Beranda - cakraelektronik admin</title>
+  <title>Beranda - cakraelektronik</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -75,52 +63,43 @@ if (isset($_POST["login"])) {
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+    <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.php" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">cakraelektronik</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.php" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">cakraelektronik</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
 
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+                <li class="nav-item dropdown pe-3">
 
-        <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/elang.jpeg"alt="Profile" class="rounded-circle">
+                    </a><!-- End Profile Iamge Icon -->
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/elang.jpeg" alt="Profile" class="rounded-circle">
-          </a><!-- End Profile Iamge Icon -->
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'adam'; ?></h6>
+                            <span>Admin</span>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="logout.php">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Pramudya</h6>
-              <span>Admin</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            </ul>
+        </nav><!-- End Icons Navigation -->
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="logout.php">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
+    </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -128,7 +107,7 @@ if (isset($_POST["login"])) {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.php">
+        <a class="nav-link" href="index.php">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
@@ -181,101 +160,109 @@ if (isset($_POST["login"])) {
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Beranda</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">beranda</a></li>
-          <li class="breadcrumb-item active">beranda</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
-
     <section class="section dashboard">
       <div class="row">
 
         <!-- Left side columns -->
         <div class="col-lg-8">
           <div class="row">
-            <!-- welcome Card -->
+
+            <!-- Welcome Card -->
             <div class="col-12">
-            <div class="card info-card customers-card shadow-sm w-100">
-              <div class="card-body text-center py-4">
-                <h4 class="mb-2" >selamat datang di website Admin
-                  <strong>cakraelektronik!</strong></h4>
-                  <p class="text-muted small mb-0">kelola produk,transaksi, dan pelanggan dengan mudah.</p>
+              <div class="card info-card customers-card shadow-sm w-100">
+                <div class="card-body text-center py-4">
+                  <h4 class="mb-2">Selamat datang di Website Admin <strong>cakraelektronik</strong></h4>
+                  <p class="text-muted small mb-0">Kelola produk, transaksi, dan pelanggan dengan mudah.</p>
                 </div>
               </div>
+              <!-- End Welcome card -->
+
+              <?php
+              include "koneksi.php";
+
+              $query = "SELECT COUNT(*) as total_pesanan FROM tb_jual";
+              $result = mysqli_query($koneksi, $query);
+              $data = mysqli_fetch_assoc($result);
+              $total_pesanan = $data['total_pesanan'];
+              ?>
+
+              <section class="section dashboard">
+                <div class="row">
+                  <!-- Sales Card -->
+                  <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card sales-card">
+                      <div class="card-body">
+                        <h5 class="card-title">Pesanan <span>| Semua Waktu</span></h5>
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-basket"></i>
+                          </div>
+                          <div class="ps-3">
+                            <h6><?php echo $total_pesanan; ?></h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Sales Card -->
+
+                  <!-- Revenue Card -->
+                  <?php
+                  include "koneksi.php";
+
+                  // Mendapatkan tanggal hari ini
+                  $tanggalHariIni = date('Y-m-d');
+
+                  // Query untuk menghitung total pendapatan hari ini
+                  $queryPendapatan = "SELECT SUM(total) as total_revenue FROM tb_jual WHERE DATE(tgl_jual) = '$tanggalHariIni'";
+
+                  // Eksekusi query
+                  $resultPendapatan = mysqli_query($koneksi, $queryPendapatan);
+
+                  // Ambil hasil query
+                  $dataPendapatan = mysqli_fetch_assoc($resultPendapatan);
+
+                  // Pastikan data total_revenue tidak null
+                  $total_revenue = isset($dataPendapatan['total_revenue']) ? $dataPendapatan['total_revenue'] : 0;
+                  ?>
+
+                  <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card revenue-card">
+                      <div class="card-body">
+                        <h5 class="card-title">Pendapatan <span>| Hari ini</span></h5>
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-currency-dollar"></i>
+                          </div>
+                          <div class="ps-3">
+                            <h6>Rp. <?php echo number_format($total_revenue, 0, ',', '.'); ?></h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- End Revenue Card -->
+                </div> <!-- pastikan ini ada -->
+              </section>
+
             </div>
-            <!-- end welcome card -->
+          </div><!-- End Left side columns -->
 
-            <!-- pesanan -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                
-
-                <div class="card-body">
-                  <h5 class="card-title">pesanan <span>| semua waktu</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-basket"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>145</h6>
-                      
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Sales Card -->
-
-            <!-- pendapatan -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Pendapatan <span>| Hari ini</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>Rp.12.000</h6>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Revenue Card -->
-
-            
-
-        </div><!-- End Left side columns -->
-
-      </div>
+        </div>
     </section>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>cakraelektronik</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://instagram.com/cakraprama/" target ="_blank">adamcakra</a>
-    </div>
-  </footer><!-- End Footer -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>cakraelektronik</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://instagram.com/cakraprama/" target="_blank">adamcakra</a>
+        </div>
+    </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

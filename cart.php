@@ -533,7 +533,7 @@ session_start();
                                 <ul class="des">
                                     <li>
                                         <span>Alamat: </span>
-                                        Jl. Ahmad Dahlan  No. 11, Jepon, Blora , Indonesia
+                                       Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia
                                     </li>
                                     <li>
                                         <span>Telepon: </span>
