@@ -97,14 +97,7 @@ $data = mysqli_fetch_array($sql);
                                 <!-- Begin Header Middle Right Area -->
                                 <div class="header-middle-right">
                                     <ul class="hm-menu">
-                                        <!-- Begin Header Middle Wishlist Area -->
-                                        <li class="hm-wishlist">
-                                            <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count"></span>
-                                                <i class="fa fa-user-o"></i>
-                                            </a>
-                                        </li>
-                                        <!-- Header Middle Wishlist Area End Here -->
+                                      
                                     </ul>
                                 </div>
                                 <!-- Header Middle Right Area End Here -->
