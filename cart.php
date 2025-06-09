@@ -264,7 +264,7 @@ session_start();
                     <div class="breadcrumb-content">
                         <ul>
                             <li><a href="index.html">Beranda</a></li>
-                            <li class="active">Shopping Cart</li>
+                            <li class="active">Keranjang</li>
                         </ul>
                     </div>
                 </div>
