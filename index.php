@@ -496,7 +496,7 @@ session_start();
                                 <ul class="des">
                                     <li>
                                         <span>Alamat: </span>
-                                       Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia
+                                     Jl. Kampus Ronggolawe No.1 Mentul, Indah, Komp. Pertamina, Karangboyo, Kec. Cepu, Kabupaten Blora, Jawa Tengah 58315
                                     </li>
                                     <li>
                                         <span>Telepon: </span>

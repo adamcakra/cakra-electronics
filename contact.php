@@ -283,7 +283,7 @@ session_start();
                                        Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online terpercaya Anda untuk berbagai produk elektronik berkualitas.</p>
                                 <div class="single-contact-block">
                                     <h4><i class="fa fa-fax"></i> Alamat</h4>
-                                    <p>  Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia</p>
+                                    <p> Jl. Kampus Ronggolawe No.1 Mentul, Indah, Komp. Pertamina, Karangboyo, Kec. Cepu, Kabupaten Blora, Jawa Tengah 58315</p>
                                 </div>
                                 <div class="single-contact-block">
                                     <h4><i class="fa fa-phone"></i> telephone</h4>
@@ -416,7 +416,7 @@ session_start();
                                 <ul class="des">
                                     <li>
                                         <span>Alamat: </span>
-                                        Jl. Jendral Sudirman  No. 11, Jepon, Blora , Indonesia
+                                      Jl. Kampus Ronggolawe No.1 Mentul, Indah, Komp. Pertamina, Karangboyo, Kec. Cepu, Kabupaten Blora, Jawa Tengah 58315
                                     </li>
                                     <li>
                                         <span>Telepon: </span>
