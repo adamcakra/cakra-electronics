@@ -278,7 +278,7 @@ session_start();
                     <div class="row">
                         <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                             <div class="contact-page-side-content">
-                                <h3 class="contact-page-title">Contact Us</h3>
+                                <h3 class="contact-page-title">Kontak kami</h3>
                                 <p class="contact-page-message mb-25"> Selamat Datang di Cakra Elektronik – Solusi Kebutuhan Elektronik Terbaik Anda!
                                        Kami dengan bangga mempersembahkan CakraElektronik, destinasi belanja online terpercaya Anda untuk berbagai produk elektronik berkualitas.</p>
                                 <div class="single-contact-block">
