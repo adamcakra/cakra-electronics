@@ -39,7 +39,7 @@ if (isset($_POST['simpan'])) {
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>cakra - cakraelektronik </title>
+    <title>pengguna - cakraelektronik </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -120,7 +120,7 @@ if (isset($_POST['simpan'])) {
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link " href="index.php">
+    <a class="nav-link collapsed " href="index.php">
       <i class="bi bi-grid"></i>
       <span>Beranda</span>
     </a>
@@ -162,7 +162,7 @@ if (isset($_POST['simpan'])) {
   </li><!-- End Laporan Page Nav -->
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="pengguna.php">
+    <a class="nav-link" href="pengguna.php">
     <i class="bi bi-person-add"></i>
       <span>Pengguna</span>
     </a>
